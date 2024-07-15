@@ -414,6 +414,8 @@ def main():
                 profiling_record_shapes=args.profiling_record_shapes,
             ).cpu()
             first_token_time = iteration_times[0] + encode_duration
+            logger.info(' '.join(f"{t_time*1000}ms" for t_time in iteration_times))
+            logger.info(f"encode_duration = {encode_duration*1000}ms")
             logger.info(f"Time to first token = {first_token_time*1000}ms")
             return tokenizer.batch_decode(outputs, skip_special_tokens=True)
 
