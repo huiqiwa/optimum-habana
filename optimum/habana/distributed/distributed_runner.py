@@ -191,7 +191,7 @@ class DistributedRunner:
         """
 
         master_addr = self.process_hostfile()
-        self._interpreter = f"deepspeed --hostfile {self._hostfile} --master_addr {master_addr} --no_local_rank --master_port {self._master_port} --force_multi"
+        self._interpreter = f"deepspeed --hostfile {self._hostfile} --master_addr {master_addr} --no_local_rank --master_port {self._master_port} --force_multi "
 
     def run(self):
         """
